@@ -58,5 +58,13 @@ namespace DataAccess.Concrete
                 context.SaveChanges();
             }
         }
+        public T GetId(int id)
+        {
+            using (var context = new TContext())
+            {
+                return context.Set<T>().Find(id);
+            }
+
+        }
     }
 }

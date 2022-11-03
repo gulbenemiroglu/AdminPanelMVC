@@ -1,3 +1,7 @@
+using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Abstract;
+using DataAccess.Concrete;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +28,8 @@ namespace PresentationUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<IProductService, ProductManager>();
+            services.AddSingleton<IProductDal, ProductDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -14,5 +14,6 @@ namespace Business.Abstract
         void Guncelle(Product product);
         List<Product> ListGetir();
         Product ProductGetirWithId(int id);
+        Product GetId(int id);  
     }
 }

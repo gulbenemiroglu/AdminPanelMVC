@@ -43,5 +43,9 @@ namespace Business.Concrete
         {
             _productDal.Delete(product);
         }
+        public Product GetId(int id)
+        {
+            return _productDal.GetId(id);
+        }
     }
 }

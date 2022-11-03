@@ -667,7 +667,7 @@
 
                                                         <td>@product.CreateDate</td>
                                                         <td>
-                                                            <a class="btn btn-danger" href="~/Product/UrunSil/@product.Id">Delete</a>
+                                                            <a class="btn btn-danger" asp-controller="Product" asp-action="SilGetId" asp-route-id="@product.Id">Delete</a>
                                                             <a class="btn btn-success" href="~/Product/UrunGuncelle/@product.Id">Update</a>
                                                         </td>
                                                     </tr>

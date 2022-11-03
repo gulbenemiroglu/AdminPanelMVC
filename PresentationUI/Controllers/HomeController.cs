@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Business.Abstract;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PresentationUI.Models;
 using System;
@@ -12,15 +13,25 @@ namespace PresentationUI.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        IProductService _productService;    
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,IProductService productService)
         {
+            _productService=productService; 
             _logger = logger;
         }
 
+      
         public IActionResult Index()
         {
-            return View();
+            var result = _productService.ListGetir();
+            return View(result);
+        }
+
+        public IActionResult UrunlerinHepsiniListele()
+        {
+            var result = _productService.ListGetir();
+            return View(result);
         }
 
         public IActionResult Privacy()

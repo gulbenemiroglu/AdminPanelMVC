@@ -71,6 +71,12 @@ namespace AdminUI.Controllers
             var result = _productService.ListGetir();
             return View(result);
         }
+        public IActionResult SilGetId(int id)
+        {
+            var urun = _productService.GetId(id);
+            _productService.Sil(urun);
+            return RedirectToAction("UrunlerinHepsiniListele");
+        }
     }
 }
 
